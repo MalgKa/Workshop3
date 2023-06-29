@@ -1,4 +1,3 @@
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -49,13 +48,30 @@
                             <td>${user.email}</td>
 
                             <td>
-                                <div class="buttons">
-                                    <button class="button is-primary is-light"><a
-                                            href="/user/delete?id=${user.id}">usuń<i class="fa-sharp fa-solid fa-user-minus ml-2"></i></a></button>
-                                    <button class="button is-primary is-light"><a
-                                            href="/user/edit?id=${user.id}">zmień<i class="fa-solid fa-user-pen ml-2"></i></a></button>
-                                    <button class="button is-primary is-light"><a
-                                            href="/user/show?id=${user.id}">pokaż<i class="fa-solid fa-eye ml-2"></i></a></button>
+                                <div class="dropdown is-hoverable">
+                                    <div class="dropdown-trigger">
+                                        <button class="button is-success" aria-haspopup="true"
+                                                aria-controls="dropdown-menu">
+                                            <span>opcje</span>
+                                            <span class="icon is-small">
+                                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                        <div class="dropdown-content">
+                                            <a href="/user/delete?id=${user.id}" class="dropdown-item">
+                                                usuń
+                                            </a>
+                                            <a href="/user/edit?id=${user.id}" class="dropdown-item">
+                                                zmień
+                                            </a>
+                                            <a href="/user/show?id=${user.id}" class="dropdown-item">
+                                                pokaż
+                                            </a>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </td>
                         </tr>

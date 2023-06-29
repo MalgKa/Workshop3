@@ -29,7 +29,7 @@ public class UserAdd extends HttpServlet {
         User userToAdd =new User();
         userToAdd.setUserName(userName);
         userToAdd.setEmail(email);
-        userToAdd.setEmail(password);
+        userToAdd.setPassword(password);
         userDao.create(userToAdd);
 
         resp.sendRedirect("/user/list");
