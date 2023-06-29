@@ -21,6 +21,8 @@ public class UserDao {
     private static final String SELECT_ALL_USER_QUERY =
             "select * from users";
 
+    private static final String DELETE_ALL_USERS_QUERY = "delete from users";
+
     public String hashPassword(String password) {
         return BCrypt.hashpw(password, BCrypt.gensalt());
     }
@@ -118,6 +120,15 @@ public class UserDao {
         } catch (SQLException ex) {
             ex.printStackTrace();
             return null;
+        }
+    }
+    public void deleteAll(){
+        try (Connection conn = DbUtil.getConnection()) {
+            PreparedStatement statement = conn.prepareStatement(DELETE_ALL_USERS_QUERY);
+            statement.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+
         }
     }
 
