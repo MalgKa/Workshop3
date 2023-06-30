@@ -60,7 +60,7 @@
                                     </div>
                                     <div class="dropdown-menu" id="dropdown-menu" role="menu">
                                         <div class="dropdown-content">
-                                            <a href="/user/delete?id=${user.id}" class="dropdown-item">
+                                            <a class="dropdown-item" onclick="agreement(${user.id})">
                                                 usuń
                                             </a>
                                             <a href="/user/edit?id=${user.id}" class="dropdown-item">
@@ -79,6 +79,29 @@
                     </tbody>
                 </table>
             </div>
+
+            <%--modal--%>
+            <div class="modal" id="oneUserModal">
+                <div class="modal-background" id="oneUserModalBg"></div>
+                <div class="modal-content has-background-white py-5 px-5">
+                    <h1 class="title mb-6 has-text-centered">Czy chcesz usunąć uzytkownika?</h1>
+                    <div class="buttons is-justify-content-space-between">
+                        <button class="button is-danger" id="confirm">
+                            <div class="is-inline">
+                                <img src="/theme/images/trash2.png">
+                            </div>
+                            <p class="is-inline ml-2">TAK</p>
+                        </button>
+                        <button class="button is-dark" id="deny">
+                            <p class="is-inline">NIE</p>
+                            <div class="is-inline">
+                                <img src="/theme/images/reuse.png">
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <div class="column is-2">
                 <button class="button is-primary mt-3"><a href="/user/add" class="has-text-white">dodaj użytkownika</a>
                 </button>
@@ -87,7 +110,7 @@
         <jsp:include page="footer.jsp"/>
     </div>
 </section>
+<script src="/theme/js/userRemove.js"></script>
 </body>
-
-<script src="/theme/js/script.js"></script>
 </html>
+
