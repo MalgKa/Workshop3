@@ -39,7 +39,7 @@
                     <div class="field">
                         <label class="label">Email</label>
                         <div class="control">
-                            <input class="input is-primary" type="text" name="email" placeholder="wpisz email">
+                            <input class="input is-primary" type="email" name="email" placeholder="wpisz email">
                         </div>
                     </div>
                     <div class="field">

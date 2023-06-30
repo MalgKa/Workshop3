@@ -45,7 +45,7 @@
                     <div class="field">
                         <label class="label">Email</label>
                         <div class="control">
-                            <input class="input" type="text" value="${user.email}" name="email">
+                            <input class="input" type="email" value="${user.email}" name="email">
                         </div>
                     </div>
                     <div class="buttons">
